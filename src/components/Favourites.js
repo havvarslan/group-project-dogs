@@ -13,9 +13,11 @@ class Favourites extends React.Component {
         <div className="Favourites-saved">
           <h2>Saved Photos</h2>
           <div className="Favourites-photos">
+
             {this.props.images.map((pic) => {
               return <img src={pic} />;
             })}
+
           </div>
         </div>
       </div>
