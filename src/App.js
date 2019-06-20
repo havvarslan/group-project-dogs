@@ -13,14 +13,22 @@ class App extends Component {
       savedPhotos: []
     };
   }
+  saveImage = (img) => {
+    const newPhotos = [];
+    newPhotos.push(img);
+
+    this.setState((prevState) => {
+      return { savedPhotos: newPhotos.concat(prevState.savedPhotos) };
+    });
+  };
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Dogs!</h1>
         </header>
-        <Favourites />
-        <RandomDog />
+        <Favourites images={this.state.savedPhotos} />
+        <RandomDog saveImage={this.saveImage} />
         <DogBattle />
         <Breeds />
       </div>
