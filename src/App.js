@@ -10,9 +10,13 @@ class App extends Component {
     super();
     this.state = {
       favouriteBreeds: [],
-      savedPhotos: []
+      savedPhotos: [],
+      top5Breeds: []
     };
   }
+  updateTopBreeds = (breeds) => {
+    //filter function
+  };
   render() {
     return (
       <div className="App">
@@ -20,8 +24,8 @@ class App extends Component {
           <h1 className="App-title">Dogs!</h1>
         </header>
         <Favourites />
+        <DogBattle updateTopBreeds={this.updateTopBreeds} />
         <RandomDog />
-        <DogBattle />
         <Breeds />
       </div>
     );
