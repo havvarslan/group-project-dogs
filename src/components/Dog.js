@@ -1,6 +1,5 @@
 import React from "react";
 import "./Dog.css";
-
 class Dog extends React.Component {
   constructor(props) {
     super(props);
@@ -51,6 +50,17 @@ class Dog extends React.Component {
       </div>
     );
   }
+
+function Dog(props) {
+  return (
+    <div className="Dog">
+      <img className="Dog-image" alt="" src={props.image} />
+      <p>
+        <button className="Dog-button">Best Dog</button>
+      </p>
+    </div>
+  );
+
 }
 
 export default Dog;

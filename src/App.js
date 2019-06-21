@@ -14,8 +14,18 @@ class App extends Component {
       top5Breeds: []
     };
   }
+
   updateTopBreeds = (breeds) => {
     //filter function
+
+  saveImage = (img) => {
+    const newPhotos = [];
+    newPhotos.push(img);
+
+    this.setState((prevState) => {
+      return { savedPhotos: newPhotos.concat(prevState.savedPhotos) };
+    });
+
   };
   render() {
     return (
@@ -23,9 +33,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Dogs!</h1>
         </header>
+
         <Favourites />
         <DogBattle updateTopBreeds={this.updateTopBreeds} />
         <RandomDog />
+
         <Breeds />
       </div>
     );
