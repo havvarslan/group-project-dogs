@@ -1,6 +1,6 @@
 import React from "react";
 import "./Favourites.css";
-
+import Dog from "./Dog.js";
 class Favourites extends React.Component {
   render() {
     return (

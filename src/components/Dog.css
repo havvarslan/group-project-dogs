@@ -18,3 +18,7 @@
 .Dog-button:focus {
   background: #54cbf3;
 }
+
+.vote {
+  padding-left: 30px;
+}

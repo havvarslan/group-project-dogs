@@ -10,9 +10,14 @@ class App extends Component {
     super();
     this.state = {
       favouriteBreeds: [],
-      savedPhotos: []
+      savedPhotos: [],
+      top5Breeds: []
     };
   }
+
+  updateTopBreeds = (breeds) => {
+    //filter function
+
   saveImage = (img) => {
     const newPhotos = [];
     newPhotos.push(img);
@@ -20,6 +25,7 @@ class App extends Component {
     this.setState((prevState) => {
       return { savedPhotos: newPhotos.concat(prevState.savedPhotos) };
     });
+
   };
   render() {
     return (
@@ -27,9 +33,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Dogs!</h1>
         </header>
-        <Favourites images={this.state.savedPhotos} />
-        <RandomDog saveImage={this.saveImage} />
-        <DogBattle />
+
+        <Favourites />
+        <DogBattle updateTopBreeds={this.updateTopBreeds} />
+        <RandomDog />
+
         <Breeds />
       </div>
     );
